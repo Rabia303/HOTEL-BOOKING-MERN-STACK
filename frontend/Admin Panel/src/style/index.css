@@ -1,0 +1,113 @@
+/* ======= Global Styles ======= */
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    display: flex;
+}
+
+/* ======= Layout Structure ======= */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin 0.3s ease;
+}
+
+/* ======= Sidebar ======= */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #121212;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+/* ======= Dashboard Styling ======= */
+.dashboard-container, .billing-container {
+    padding: 20px;
+    background-color: #1e1e2f;
+    color: white;
+    min-height: 100vh;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card, .analytics-box, .payment-card, .transaction-box {
+    background-color: #292943;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover, .payment-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ======= Transactions Table ======= */
+.transaction-box table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transaction-box th, .transaction-box td {
+    padding: 12px;
+    border-bottom: 1px solid #444;
+    text-align: left;
+}
+
+.transaction-box th {
+    background-color: #333;
+    color: white;
+}
+
+.transaction-box tr:nth-child(even) {
+    background-color: #1f1f3a;
+}
+
+.transaction-box tr:hover {
+    background-color: #2a2a4f;
+}
+
+/* ======= Responsive Design ======= */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    .payment-summary {
+        flex-direction: column;
+    }
+}
